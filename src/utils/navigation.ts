@@ -1,8 +1,8 @@
 const navBarLinks = [
-  { name: "Home", url: "/condupasto" },
-  { name: "Servicios", url: "/condupasto/services" },
-  { name: "Equipo", url: "/condupasto/teams" },
-  { name: "Contacto", url: "/condupasto/contact" },
+  { name: "Home", url: "/" },
+  { name: "Servicios", url: "/services" },
+  { name: "Equipo", url: "/teams" },
+  { name: "Contacto", url: "/contact" },
 ];
 
 const socialLinks = {
