@@ -6,8 +6,7 @@ import compressor from "astro-compressor";
 import mdx from "@astrojs/mdx";
 
 export default defineConfig({
-  site: "https://Juaness98.github.io",
-  base: "condupasto",
+  site: "https://Juaness98.github.io/condupasto",
   image: {
     domains: ["images.unsplash.com"],
   },
@@ -26,12 +25,5 @@ export default defineConfig({
   }), mdx()],
   experimental: {
     clientPrerender: true,
-  },
-  vite: {
-    resolve: {
-      alias: {
-        "@images": "/src/images"
-      }
-    }
   }
 });
