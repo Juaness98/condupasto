@@ -38,12 +38,12 @@ export const GET: APIRoute = async () => {
   );
 
   const manifest = {
-    short_name: "ScrewFast",
-    name: "ScrewFast",
+    short_name: "CRC",
+    name: "Condupasto",
     icons,
     display: "minimal-ui",
-    id: "/",
-    start_url: "/",
+    id: "/condupasto",
+    start_url: "/condupasto",
     theme_color: "#FFEDD5",
     background_color: "#262626",
   };
