@@ -27,4 +27,11 @@ export default defineConfig({
   experimental: {
     clientPrerender: true,
   },
+  vite: {
+    resolve: {
+      alias: {
+        "@images": "/src/images"
+      }
+    }
+  }
 });
