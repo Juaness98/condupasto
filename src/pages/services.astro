@@ -1,0 +1,58 @@
+---
+// Importing necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import { getCollection } from "astro:content";
+
+import { SITE } from "@data/constants";
+
+// Define variables for page content
+const title: string = "Servicios";
+const pageTitle: string = `Servicios | ${SITE.title}`;
+
+const services = await getCollection("services");
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://condupasto.com/services",
+    url: "https://condupasto.com/services",
+    name: "Hardware Tools | ScrewFast",
+    description:
+      "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://condupasto.com",
+      name: "ScrewFast",
+      description:
+        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+    },
+    inLanguage: "en-US",
+  }}
+>
+  <div
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="flex items-center justify-between gap-8 sm:mb-4 md:mb-4">
+      <div class="flex items-center">
+        <h1 class="dark:text-neutral-200 text-balance text-2xl font-bold tracking-tight text-neutral-800 md:text-4xl md:leading-tight">
+          {title}
+        </h1>
+      </div>
+    </div>
+  </div>
+  
+  { services &&
+    services.map((service) => (
+      <FeaturesStatsAlt
+        title={service.data.title}
+        subTitle={service.data.subTitle}
+        benefits={service.data.benefits}
+        imageUrl={service.data.imageUrl}
+      />
+    ))
+  }
+</MainLayout>

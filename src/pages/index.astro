@@ -1,0 +1,87 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeroSection from "@components/sections/landing/HeroSection.astro";
+import ClientsSection from "@components/sections/landing/ClientsSection.astro";
+import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
+import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
+import PricingSection from "@components/sections/pricing/PricingSection.astro";
+import FAQ from "@components/sections/misc/FAQ.astro";
+import heroImage from "@images/conduExamen.png";
+import faqs from "@data/faqs.json";
+import features from "@data/features.json";
+import pricing from "@data/pricing.json";
+import feature1 from "@images/feature1.jpg";
+import feature2 from "@images/feature2.jpg";
+import feature3 from "@images/feature3.jpg";
+import { partnersData } from "@/data_files/constants";
+
+const avatarSrcs: Array<string> = [
+  "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+  "https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+];
+---
+
+<MainLayout>
+  <HeroSection
+    title=`¡Obtén tu licencia rápido y sin complicaciones! con <span
+        class="text-green-500 dark:text-green-400"> ConduPasto </span>`
+    subTitle="Centro de reconocimiento de conductores"
+    primaryBtn="Explora nuestros servicios"
+    primaryBtnURL="/services"
+    secondaryBtn="Contáctanos"
+    secondaryBtnURL="/contact"
+    withReview={true}
+    avatars={avatarSrcs}
+    rating=`<span class="font-bold">4.7</span> / 5`
+    starCount={4}
+    reviews=`De mas de <span class="font-bold"> 5 mil </span> reseñas`
+    src={heroImage}
+    alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+  />
+
+  <ClientsSection
+    title="Somos la mejor opción para tu tramite"
+    subTitle="Estamos acreditados por la ONAC y habilitados por el ministerio de transporte"
+    partners={partnersData}
+  />
+
+  <FeaturesGeneral
+    title="Alcance"
+    subTitle="El centro de reconocimiento de conductores está autorizado exclusivamente para realizar la evaluación de aptitud física, mental y de coordinación motriz, requisitos indispensables para la obtención, recategorización o renovación de la licencia de conducción para conductores de vehículos automotores."
+    alt=""
+    features={features}
+  />
+
+  <FeaturesNavs
+    title=`Contamos con grandes profesionales y las mejores estrategias y herramientas para tu tramite`
+    tabs={[
+      {
+        heading: "Profesionales calificados",
+        content: "Nuestro equipo de expertos está listo para ayudarte en cada paso del proceso.",
+        svg: "tools",
+        src: feature1,
+        alt: "",
+        first: true,
+      },
+      {
+        heading: "Herramientas de precision",
+        content: "Los centros de reconocimiento evalúan con precisión las aptitudes necesarias para una conducción segura.",
+        svg: "dashboard",
+        src: feature2,
+        alt: "",
+      },
+      {
+        heading: "Eficiencia y cumplimiento",
+        content: "Garantizamos una atención rápida y eficiente, asegurando el cumplimiento de requisitos para la seguridad vial.",
+        svg: "house",
+        src: feature3,
+        alt: "",
+      },
+    ]}
+  />
+
+  <PricingSection pricing={pricing} />
+
+  <FAQ title="Preguntas<br />frecuentes" faqs={faqs} />
+</MainLayout>

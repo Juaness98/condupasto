@@ -1,0 +1,48 @@
+---
+// Import the necessary dependencies
+import FooterSocialLink from "@components/ui/links/FooterSocialLink.astro";
+import EmailFooterInput from "@components/ui/forms/input/EmailFooterInput.astro";
+import enStrings from "@utils/navigation.ts";
+import Icon from "@components/ui/icons/Icon.astro";
+import logo from "@images/logoConduPasto.png";
+import { SITE } from "@data/constants";
+import { Image } from "astro:assets";
+
+const strings = enStrings;
+
+---
+
+<footer class="dark:bg-neutral-900 w-full bg-neutral-300">
+  <div class="mx-auto flex w-full max-w-[85rem] flex-col items-center justify-center px-4 py-10 sm:px-6 lg:px-16 lg:pt-20 2xl:max-w-screen-2xl">
+    <div class="flex w-full flex-col items-center justify-between gap-6 md:flex-row md:gap-12">
+      <div class="flex flex-1 justify-center">
+        <Image src={logo} alt="Logo" class="h-auto w-2/3" />
+      </div>
+      <div class="flex flex-1 flex-col items-center text-center">
+        <h3 class="dark:text-neutral-200 font-bold text-neutral-800">Encuéntranos en redes sociales</h3>
+        <div class="mt-2 flex justify-center gap-4">
+          <FooterSocialLink url={"https://www.instagram.com/crccondupasto?igsh=bHY5djNoODRnNWNn"}><Icon name="instagramFooter" /></FooterSocialLink>
+          <FooterSocialLink url={strings.socialLinks.x}><Icon name="whatsappFooter" /></FooterSocialLink>
+        </div>
+      </div>
+      <div class="flex flex-1 flex-col items-center text-center">
+        <h3 class="dark:text-neutral-200 font-bold text-neutral-800">Mantente al tanto</h3>
+        <form class="mt-3 w-full max-w-md">
+          <EmailFooterInput />
+          <p class="dark:text-neutral-400 mt-3 text-sm text-neutral-600">Manténgase actualizado con las últimas herramientas y ofertas exclusivas.</p>
+        </form>
+      </div>
+    </div>
+    <div class="mt-9 flex w-full flex-col items-center sm:mt-12 sm:flex-row sm:justify-between">
+      <p class="dark:text-neutral-400 text-sm text-neutral-600 text-center">
+        © <span id="current-year"></span> {SITE.title}. Desarrollado por {SITE.author}
+      </p>
+    </div>
+
+    <script>
+      const year = new Date().getFullYear();
+      const element = document.getElementById("current-year");
+      element!.innerText = year.toString();
+    </script>
+  </div>
+</footer>

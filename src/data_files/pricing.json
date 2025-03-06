@@ -1,0 +1,35 @@
+{
+  "title": "Dale un vistazo a nuestras ofertas",
+  "subTitle": "Nuestros precios son los más competitivos del mercado",
+  "badge": "Oferta limitada",
+  "thirdOption": "Enterprise Solutions?",
+  "btnText": "Get a Custom Quote",
+
+  "starterKit": {
+    "name": "Renueva tu licencia",
+    "description": "Renueva tu licencia de conducir",
+    "price": "50",
+    "cents": ".00",
+    "billingFrequency": "COP / anual",
+    "features": [
+      "Avalado por el Ministerio de Transporte",
+      "Garantia"
+    ],
+    "purchaseBtnTitle": "¡Renueva ya!",
+    "purchaseLink": "#"
+  },
+
+  "professionalToolbox": {
+    "name": "Obten tu licencia",
+    "description": "Obten tu licencia de conducir",
+    "price": "100",
+    "cents": ".00",
+    "billingFrequency": "COP / anual",
+    "features": [
+      "Avalado por el Ministerio de Transporte",
+      "Garantia"
+    ],
+    "purchaseBtnTitle": "Inicia con los mejores",
+    "purchaseLink": "#"
+  }
+}

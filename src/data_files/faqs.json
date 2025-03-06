@@ -1,0 +1,53 @@
+{
+  "subTitle": "Pregúntanos sobre nuestro entorno, y obtén respuestas objetivas.",
+  "faqs": [
+    {
+      "question": "¿Qué es un CRC?",
+      "answer": "Un Centro de Reconocimiento de Conductores autorizado para realizar exámenes médicos para la licencia de conducción."
+    },
+    {
+      "question": "¿Cuáles son los requisitos para los exámenes?",
+      "answer": "Para empezar tan solo necesitamos la cédula original."
+    },
+    {
+      "question": "¿Cuánto cuesta el examen?",
+      "answer": "Varía según la categoría de la licencia, consulta directamente."
+    },
+    {
+      "question": "¿Cuánto dura el proceso?",
+      "answer": "Aproximadamente 30-60 minutos."
+    },
+    {
+      "question": "¿En qué consiste el examen médico?",
+      "answer": "Evaluaciones visuales, auditivas, motoras y psicológicas."
+    },
+    {
+      "question": "¿Qué pruebas se realizan en el examen psicotécnico?",
+      "answer": "Coordinación, reflejos, atención y toma de decisiones."
+    },
+    {
+      "question": "¿Puedo hacer el examen si uso gafas?",
+      "answer": "Sí, pero se anotará en la licencia."
+    },
+    {
+      "question": "¿Puedo obtener la licencia si tengo una discapacidad?",
+      "answer": "Sí, pero puede haber restricciones o adaptaciones."
+    },
+    {
+      "question": "¿Qué condiciones médicas impiden obtener la licencia?",
+      "answer": "Enfermedades que afecten la capacidad de conducir, como epilepsia no controlada o visión severamente reducida."
+    },
+    {
+      "question": "¿Qué pasa si tengo una condición médica preexistente?",
+      "answer": "Puede requerir certificación médica adicional."
+    },
+    {
+      "question": "¿Dónde puedo consultar los resultados?",
+      "answer": "En el CRC o en la plataforma del RUNT."
+    },
+    {
+      "question": "¿Cómo presentar una queja sobre el servicio?",
+      "answer": "Ante el CRC o el ministerio de transporte."
+    }
+  ]
+}

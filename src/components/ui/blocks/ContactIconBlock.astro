@@ -1,0 +1,51 @@
+---
+// Define props from Astro
+const {
+  heading,
+  content,
+  isAddressVisible,
+  addressContent,
+  isLinkVisible,
+  linkTitle,
+  linkURL,
+  isArrowVisible,
+} = Astro.props;
+
+// Define TypeScript interface for props
+interface Props {
+  heading?: string;
+  content?: string;
+  isAddressVisible?: boolean;
+  addressContent?: string;
+  isLinkVisible?: boolean;
+  linkTitle?: string;
+  linkURL?: string;
+  isArrowVisible?: boolean;
+}
+
+// Define SVG arrow to be used in the component
+const arrowSVG: string = `<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+    <path d="M16 0H4a2 2 0 0 0-2 2v1H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM13.929 17H7.071a.5.5 0 0 1-.5-.5 3.935 3.935 0 1 1 7.858 0 .5.5 0 0 1-.5.5Z"/>
+</svg>`;
+---
+
+<!-- Root container, which arranges the heading and content -->
+<div class="flex gap-x-7 py-6">
+  <!-- Slot to allow for extensibility of the component -->
+  <slot />
+  <div class="grow">
+    <!-- Heading of the section -->
+    <h3 class="font-bold text-neutral-700 dark:text-neutral-300">
+      {heading}
+    </h3>
+    <!-- Content of the section -->
+    <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">{content}</p>
+    <!-- Conditional rendering of address content if isAddressVisible is true -->
+    {
+      isAddressVisible ? (
+        <p class="mt-1 text-sm italic text-neutral-500">{addressContent}</p>
+      ) : null
+    }
+   
+  </div>
+</div>
