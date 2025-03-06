@@ -1,11 +1,13 @@
 {
-  "name": "",
+  "name": "condupasto",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build && node process-html.mjs",
+    "predeploy": "astro build",
+    "deploy": "gh-pages -d dist",
     "preview": "astro preview",
     "astro": "astro"
   },

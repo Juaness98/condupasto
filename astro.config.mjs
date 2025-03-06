@@ -6,7 +6,9 @@ import compressor from "astro-compressor";
 import mdx from "@astrojs/mdx";
 
 export default defineConfig({
-  site: "https://condupasto.com",
+  site: "https://Juaness98.github.io/condupasto",
+  base: "/condupasto/",
+  output: "static", 
   image: {
     domains: ["images.unsplash.com"],
   },
