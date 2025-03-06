@@ -1,6 +1,8 @@
 ---
 import NavLink from "@components/ui/links/NavLink.astro";
 import enStrings from "@utils/navigation.ts";
+import condupastoLog from "@images/condupastoLog.png";
+import { Image } from "astro:assets";
 
 const strings = enStrings;
 const homeUrl =  "/";
@@ -22,7 +24,7 @@ const homeUrl =  "/";
         href={homeUrl}
         aria-label="Brand"
       >
-        <img src="condupasto.png" alt="logo" class="h-auto w-24" />
+        <Image src={condupastoLog} alt="logo" class="h-auto w-24" />
         <!-- <BrandLogo class="h-auto w-24" /> -->
       </a>
       <!-- Collapse toggle for smaller screens -->
