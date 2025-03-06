@@ -1,8 +1,10 @@
+const BASE_URL = import.meta.env.BASE_URL;
+
 const navBarLinks = [
-  { name: "Home", url: "/" },
-  { name: "Servicios", url: "/services" },
-  { name: "Equipo", url: "/teams" },
-  { name: "Contacto", url: "/contact" },
+  { name: "Home", url: `${BASE_URL}/` },
+  { name: "Servicios", url: `${BASE_URL}/services` },
+  { name: "Equipo", url: `${BASE_URL}/teams` },
+  { name: "Contacto", url: `${BASE_URL}/contact` },
 ];
 
 const socialLinks = {
