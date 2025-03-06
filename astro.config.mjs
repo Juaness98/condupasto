@@ -7,7 +7,6 @@ import mdx from "@astrojs/mdx";
 
 export default defineConfig({
   site: "https://Juaness98.github.io",
-  base: "condupasto",
   image: {
     domains: ["images.unsplash.com"],
   },
