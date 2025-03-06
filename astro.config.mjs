@@ -17,6 +17,7 @@ export default defineConfig({
       locales: {
         en: "en",
       },
+      
     },
   }), compressor({
     gzip: false,
