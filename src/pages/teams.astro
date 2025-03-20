@@ -1,24 +1,17 @@
 ---
 // Import necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
-import LeftSection from "@components/ui/blocks/LeftSection.astro";
-import RightSection from "@components/ui/blocks/RightSection.astro";
 
 import fonoaudiologo from "@images/teams/fonoaudiologo.jpg";
-import fonoaudiologo2 from "@images/teams/fonoaudiologo2.jpg";
 import medicoGeneral from "@images/teams/medicoGeneral.jpg";
-import medicoGeneral2 from "@images/teams/medicoGeneral2.jpg";
 import optometra from "@images/teams/optometra.jpg";
-import optometra2 from "@images/teams/optometraa2.jpg";
 import profesionalCertificador from "@images/teams/profesionalCertificador.jpg";
-import profesionalCertificador2 from "@images/teams/profesionalCertificador2.jpg";
 import psicologo from "@images/teams/psicologo.jpg";
-import psicologo2 from "@images/teams/psicologo2.jpg";
 
 import { SITE } from "@data/constants";
+import { Image } from "astro:assets";
 
 interface Article {
-  isRightSection: boolean;
   title: string;
   subTitle: string;
   btnExists?: boolean;
@@ -35,55 +28,36 @@ interface Article {
 
 const articles: Article[] = [
   {
-    isRightSection: true,
     title: "Fonoaudióloga",
     subTitle: "Camila Enriquez",
     single: false,
     imgOne: fonoaudiologo,
-    imgOneAlt: "",
-    imgTwo: fonoaudiologo2,
-    imgTwoAlt: "",
   },
   {
-    isRightSection: false,
-    title: "Profesional certificador",
-    subTitle: "Jose Luis Ibarra",
-    single: false,
-    imgOne: profesionalCertificador,
-    imgOneAlt: "",
-    imgTwo: profesionalCertificador2,
-    imgTwoAlt: "",
-  },
-  {
-    isRightSection: true,
-    title: "Psicóloga",
-    subTitle: "Alejandra Troya",
-    single: false,
-    imgOne: psicologo,
-    imgOneAlt: "",
-    imgTwo: psicologo2,
-    imgTwoAlt: "",
-  },
-  {
-    isRightSection: false,
-    title: "Optometra",
-    subTitle: "Camilo Rodríguez",
-    single: false,
-    imgOne: optometra,
-    imgOneAlt: "",
-    imgTwo: optometra2,
-    imgTwoAlt: "",
-  },
-  {
-    isRightSection: true,
     title: "Médica general",
     subTitle: "Estefania Gómez",
     single: false,
     imgOne: medicoGeneral,
-    imgOneAlt: "",
-    imgTwo: medicoGeneral2,
-    imgTwoAlt: "",
   },
+  {
+    title: "Profesional certificador",
+    subTitle: "Jose Luis Ibarra",
+    single: false,
+    imgOne: profesionalCertificador,
+  },
+  {
+    title: "Psicóloga",
+    subTitle: "Alejandra Troya",
+    single: false,
+    imgOne: psicologo,
+  },
+
+  {
+    title: "Optometra",
+    subTitle: "Camilo Rodríguez",
+    single: false,
+    imgOne: optometra,
+  }
 ];
 
 const pageTitle: string = `Equipo | ${SITE.title}`;
@@ -97,60 +71,52 @@ const title: string = "Equipo";
     "@type": "WebPage",
     "@id": "https://condupasto.com/team",
     url: "https://condupasto.com/team",
-    name: "Team",
-    description:
-      "Uniting expertise with your vision, ScrewFast provides exceptional service and comprehensive solutions in the hardware and construction industry, from consultation to project completion.",
+    name: "Condupasto | Equipo",
+    description: "",
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk",
-      name: "ScrewFast",
-      description:
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+      url: "https://condupasto.com",
+      name: "Condupasto",
+      description: "",
     },
     inLanguage: "en-US",
   }}
 >
-  <div
-    class="mx-auto max-w-[85rem] px-4 pt-10 sm:px-6 lg:px-8 2xl:max-w-full"
-  >
+  <div class="mx-auto max-w-[85rem] px-4 pt-10 sm:px-6 lg:px-8 2xl:max-w-full">
     <div class="flex items-center justify-between gap-8 sm:mb-4 md:mb-4">
       <div class="flex items-center">
-        <h1 class="dark:text-neutral-200 text-balance text-2xl font-bold tracking-tight text-neutral-800 md:text-4xl md:leading-tight">
+        <h1
+          class="dark:text-neutral-200 text-balance text-2xl font-bold tracking-tight text-neutral-800 md:text-4xl md:leading-tight"
+        >
           {title}
         </h1>
       </div>
     </div>
   </div>
 
-  {
-    articles.map((article) => {
-      return article.isRightSection ? (
-        <RightSection
-          title={article.title}
-          subTitle={article.subTitle}
-          single={article.single}
-          imgOne={article.imgOne}
-          imgOneAlt={article.imgOneAlt}
-          imgTwo={article.imgTwo}
-          imgTwoAlt={article.imgTwoAlt}
-          btnExists={article.btnExists}
-          btnTitle={article.btnTitle}
-          btnURL={article.btnURL}
-        />
-      ) : (
-        <LeftSection
-          title={article.title}
-          subTitle={article.subTitle}
-          single={article.single}
-          imgOne={article.imgOne}
-          imgOneAlt={article.imgOneAlt}
-          imgTwo={article.imgTwo}
-          imgTwoAlt={article.imgTwoAlt}
-          btnExists={article.btnExists}
-          btnTitle={article.btnTitle}
-          btnURL={article.btnURL}
-        />
-      );
-    })
-  }
+  <div class="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 py-10 sm:grid-cols-2">
+    {
+      articles.map((article) => (
+        <div class="rounded-lg bg-white/80 dark:bg-gray-800/80 p-6 shadow-lg flex flex-col items-center text-center backdrop-blur-md">
+          <h2 class="text-2xl font-extrabold tracking-tight text-neutral-800">
+            {article.title}
+          </h2>
+          <p class="max-w-prose text-pretty font-normal text-neutral-600 sm:text-lg">
+            {article.subTitle}
+          </p>
+  
+          <div class="mt-4 w-full flex justify-center">
+            <Image
+              class="w-[250px] h-auto object-cover rounded-xl"
+              src={article.imgOne}
+              alt=""
+            />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  
+  
+  
 </MainLayout>

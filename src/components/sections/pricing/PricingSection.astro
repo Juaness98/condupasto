@@ -1,143 +1,188 @@
 ---
-// Import SecondaryCTA component for use in this module
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
-// Define props from Astro
-const { pricing } = Astro.props;
-
-type Product = {
-  name: string;
-  description: string;
-  price: string;
-  cents: string;
-  billingFrequency: string;
-  features: Array<string>;
-  purchaseBtnTitle: string;
-  purchaseLink: string;
-};
-
-interface PricingSectionProps {
-  title: string;
-  subTitle: string;
-  badge: string;
-  thirdOption: string;
-  btnText: string;
-  pricing: {
-    title: string;
-    subTitle: string;
-    starterKit: Product;
-    professionalToolbox: Product;
-  };
-}
+const pricingPlans = [
+  {
+    name: "Examen médico",
+    description: "Carro particular B1",
+    price: "$ 227.000 COP",
+    cents: "",
+    billingFrequency: "/único pago",
+    features: [
+      "Duración: 40 minutos aproximadamente.",
+      "Debes traer tu C.C. original",
+    ],
+  },
+  {
+    name: "Examen médico",
+    description: "Carro particular y público C1",
+    price: "$ 227.000 COP",
+    cents: "",
+    billingFrequency: "/único pago",
+    features: [
+      "Duración: 40 minutos aproximadamente.",
+      "Debes traer tu C.C. original",
+    ],
+  },
+  {
+    name: "Examen médico",
+    description: "Moto A2",
+    price: "$ 227.000 COP",
+    cents: "",
+    billingFrequency: "/único pago",
+    features: [
+      "Duración: 40 minutos aproximadamente.",
+      "Debes traer tu C.C. original",
+    ],
+  },
+  {
+    name: "Examen médico",
+    description: "Carro particular B1/público C1 y moto A2",
+    price: "$ 310.000 COP",
+    cents: "",
+    billingFrequency: "/único pago",
+    features: [
+      "Duración: 40 minutos aproximadamente.",
+      "Debes traer tu C.C. original",
+    ],
+  },
+];
 ---
 
 <section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  class="relative flex min-h-[65vh] flex-col items-center justify-center"
 >
-  <!-- Section heading and sub-heading -->
-  <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-    <h2
-      class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+  <div
+    class="absolute left-0 right-0 flex -translate-y-1/2 items-center justify-between px-4 sm:px-10"
+  >
+    <button
+      id="prevBtn"
+      class="z-50 flex h-12 w-12 items-center justify-center rounded-full p-3 text-white shadow-lg transition hover:bg-green-500 sm:h-14 sm:w-14 sm:p-4"
     >
-      {pricing.title}
-    </h2>
-    <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
-      {pricing.subTitle}
-    </p>
+      <svg
+        class="dark:text-white h-6 w-6 text-gray-800"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 12h14M5 12l4-4m-4 4 4 4"></path>
+      </svg>
+    </button>
+    <button
+      id="nextBtn"
+      class="z-50 flex h-12 w-12 items-center justify-center rounded-full p-3 text-white shadow-lg transition hover:bg-green-500 sm:h-14 sm:w-14 sm:p-4"
+    >
+      <svg
+        class="h-6 w-6 text-gray-800"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 12H5m14 0-4 4m4-4-4-4"></path>
+      </svg>
+    </button>
   </div>
-  <!-- Contains two main product blocks -->
-  <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-0">
-    <!-- Starter Kit product details -->
-    <div
-      class="w-full rounded-xl bg-gray-800 p-6 sm:w-1/2 sm:rounded-r-none sm:p-8 lg:w-1/3"
-    >
-      <div class="mb-4">
-        <h3 class="text-2xl font-bold text-neutral-100 sm:text-3xl">
-          {pricing.starterKit.name}
-        </h3>
-        <p class="text-indigo-300">{pricing.starterKit.description}</p>
-      </div>
-
-      <div class="mb-4">
-        <span class="text-4xl font-bold text-neutral-200"
-          >{pricing.starterKit.price}</span
-        >
-        <span class="text-lg font-bold text-neutral-300"
-          >{pricing.starterKit.cents}</span
-        >
-        <span class="ms-3 text-sm text-indigo-200"
-          >{pricing.starterKit.billingFrequency}</span
-        >
-      </div>
-      <!-- Features list - automatically created by mapping over `features` array -->
-      <ul class="mb-6 space-y-2 text-neutral-300">
-        {
-          pricing.starterKit.features.map((feature: string) => (
-            <li class="flex items-center gap-1.5">
-              <Icon name="checkCircle" />
-
-              <span>{feature}</span>
-            </li>
-          ))
-        }
-      </ul>
-      <!-- CTA for purchasing the product -->
-      <a
-        href={pricing.starterKit.purchaseLink}
-        class="block rounded-lg bg-gray-500 px-8 py-3 text-center text-sm font-bold text-gray-100 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-600 focus-visible:ring active:text-gray-300 md:text-base"
-        >{pricing.starterKit.purchaseBtnTitle}</a
-      >
-    </div>
-    <!-- Professional Toolbox product details -->
-    <div
-      class="w-full rounded-xl bg-gradient-to-tr from-[#6EE7B7] to-[#059669] p-6 shadow-xl sm:w-1/2 sm:p-8"
-    >
-      <div
-        class="mb-4 flex flex-col items-start justify-between gap-4 lg:flex-row"
-      >
-        <div>
-          <h3 class="text-2xl font-bold text-neutral-100 sm:text-3xl">
-            {pricing.professionalToolbox.name}
-          </h3>
-          <p class="text-orange-200">{pricing.professionalToolbox.description}</p>
-        </div>
-
-        <span
-          class="order-first inline-block rounded-full bg-orange-200 bg-opacity-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-center text-orange-600 lg:order-none"
-          >{pricing.badge}</span
-        >
-      </div>
-
-      <div class="mb-4">
-        <span class="text-6xl font-bold text-neutral-100"
-          >{pricing.professionalToolbox.price}</span
-        >
-        <span class="text-lg font-bold text-orange-100"
-          >{pricing.professionalToolbox.cents}</span
-        >
-        <span class="ms-3 text-orange-200"
-          >{pricing.professionalToolbox.billingFrequency}</span
-        >
-      </div>
-      <!-- Features list - automatically created by mapping over `features` array -->
-      <ul class="mb-6 space-y-2 text-orange-100">
-        {
-          pricing.professionalToolbox.features.map((feature: string) => (
-            <li class="flex items-center gap-1.5">
-              <Icon name="checkCircle" />
-
-              <span>{feature}</span>
-            </li>
-          ))
-        }
-      </ul>
-      <!-- CTA for purchasing the product -->
-      <a
-        href={pricing.professionalToolbox.purchaseLink}
-        class="block rounded-lg bg-orange-200 bg-opacity-50 px-8 py-3 text-center text-sm font-bold text-neutral-100 outline-none ring-orange-300 transition duration-100 hover:bg-orange-300 hover:bg-opacity-50 focus-visible:ring active:bg-orange-400 md:text-base"
-        >{pricing.professionalToolbox.purchaseBtnTitle}</a
-      >
+  <div class="relative w-full lg:w-3/4">
+    <div id="carousel" class="relative flex items-center justify-center">
+      {
+        pricingPlans.map((plan, index) => (
+          <div
+            class="absolute w-full scale-90 transform rounded-2xl bg-gradient-to-tr from-[#6EE7B7] to-[#059669] p-8 text-white opacity-0 shadow-xl transition-all duration-500 ease-in-out"
+            data-index={index}
+          >
+            <div class="mb-4 text-center">
+              <p class="text-3xl font-bold">{plan.name}</p>
+              <p class="text-2xl">{plan.description}</p>
+            </div>
+            <div class="mb-4 flex items-baseline justify-center gap-2">
+              <span class="text-3xl font-bold">{plan.price}</span>
+              <span class="text-xl font-bold">{plan.cents}</span>
+              <span class="text-lg text-green-200">
+                {plan.billingFrequency}
+              </span>
+            </div>
+            <ul class="mb-6 space-y-2 text-center">
+              {plan.features.map((feature, i) => (
+                <li class="flex items-center justify-center gap-2 text-lg">
+                  <Icon name="checkCircle" class="h-6 w-6 text-green-400" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    let index = 0;
+    const slides = document.querySelectorAll("#carousel > div");
+    const totalSlides = slides.length;
+    let startX = 0;
+
+    function updateSlide() {
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.style.opacity = "1";
+          slide.style.transform = "scale(1)";
+          slide.style.zIndex = "10";
+        } else {
+          slide.style.opacity = "0";
+          slide.style.transform = "scale(0.9)";
+          slide.style.zIndex = "5";
+        }
+      });
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      index = (index + 1) % totalSlides;
+      updateSlide();
+    });
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      index = (index - 1 + totalSlides) % totalSlides;
+      updateSlide();
+    });
+
+    // Soporte táctil (swipe)
+    const carousel = document.getElementById("carousel");
+
+    carousel.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener("touchend", (e) => {
+      let endX = e.changedTouches[0].clientX;
+      let diffX = startX - endX;
+
+      if (diffX > 50) {
+        index = (index + 1) % totalSlides; // Swipe izquierda (siguiente)
+      } else if (diffX < -50) {
+        index = (index - 1 + totalSlides) % totalSlides; // Swipe derecha (anterior)
+      }
+      updateSlide();
+    });
+
+    updateSlide();
+  });
+</script>
