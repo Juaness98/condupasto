@@ -1,0 +1,103 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+import licenceCategories from "@data/licenceCategory.json";
+import licenceVigency from "@data/licenceVigency.json";
+
+const pageTitle: string = `Licencias info | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://condupasto.com/contact",
+    url: "https://condupasto.com/contact",
+    name: "Contactanos",
+    description: "",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://condupasto.com",
+      name: "Condupasto",
+      description: "",
+    },
+    inLanguage: "en-US",
+  }}
+>
+  <div class="mx-auto max-w-[85rem] px-4 pt-10 sm:px-6 lg:px-8 2xl:max-w-full">
+    <div class="flex items-center justify-between gap-8 sm:mb-4 md:mb-4">
+      <div class="flex items-center">
+        <h1
+          class="dark:text-neutral-200 text-balance text-2xl font-bold tracking-tight text-neutral-800 md:text-4xl md:leading-tight"
+        >
+          Información
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative p-4 sm:p-6 md:p-12">
+    <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-neutral-800 pb-4">
+      Vigencia de licencias de conducción
+    </h1>
+  
+    <div class="overflow-x-auto rounded-lg shadow-sm">
+      <table class="min-w-full text-left text-sm text-gray-500 rtl:text-right">
+        <thead class="bg-green-200 text-gray-700">
+          <tr>
+            <th scope="col" class="px-4 sm:px-6 py-3">Edad del conductor</th>
+            <th scope="col" class="px-4 sm:px-6 py-3">Vigencia servicio particular (años)</th>
+            <th scope="col" class="px-4 sm:px-6 py-3">Vigencia servicio público (años)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {licenceVigency.map((fila) => (
+            <tr class="border-b border-gray-200 bg-white">
+              <th scope="row" class="whitespace-nowrap px-4 sm:px-6 py-4 font-medium text-gray-900">
+                {fila.edad}
+              </th>
+              <td class="px-4 sm:px-6 py-4 text-gray-900">{fila.particular}</td>
+              <td class="px-4 sm:px-6 py-4 text-gray-900">{fila.publico}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  
+    <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-neutral-800 pt-8 pb-4">
+      Categorías de licencias de conducción
+    </h1>
+  
+    <div class="overflow-x-auto rounded-lg shadow-sm">
+      <table class="min-w-full text-left text-sm text-gray-500 rtl:text-right">
+        <thead class="bg-green-200 text-gray-700">
+          <tr>
+            <th scope="col" class="px-4 sm:px-6 py-3">Categoría</th>
+            <th scope="col" class="px-4 sm:px-6 py-3">Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          {licenceCategories.map((item) => (
+            <>
+              <tr class="border-b border-gray-200 bg-white">
+                <th scope="row" class="whitespace-nowrap px-4 sm:px-6 py-4 font-medium text-gray-900">
+                  {item.categoria}
+                </th>
+                <td class="px-4 sm:px-6 py-4 text-gray-900">{item.descripcion}</td>
+              </tr>
+              {item.nota && (
+                <tr class="border-b border-gray-200 bg-white">
+                  <td colspan="2" class="px-4 sm:px-6 py-4 font-medium text-gray-700 italic">
+                    Nota: {item.nota}
+                  </td>
+                </tr>
+              )}
+            </>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+</MainLayout>

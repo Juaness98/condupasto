@@ -1,6 +1,7 @@
 const navBarLinks = [
   { name: "Home", url: `/condupasto` },
   { name: "Servicios", url: `/condupasto/services` },
+  { name: "Licencias info", url: `/condupasto/licenceInfo` },
   { name: "Equipo", url: `/condupasto/teams` },
   { name: "Contacto", url: `/condupasto/contact` },
 ];

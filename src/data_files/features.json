@@ -1,5 +1,10 @@
 [
   {
+    "heading": "Informacion de tu interés",
+    "content": "En Colombia, para obtener, recategorizar o renovar la licencia de conducción, es obligatorio realizar un examen médico que evalúa la salud general, así como la capacidad visual, auditiva y psicomotriz del conductor. Este requisito busca garantizar la seguridad vial al evitar que personas con condiciones de salud que puedan afectar la conducción estén al volante.",
+    "svg": "books"
+  },
+  {
     "heading": "Mision",
     "content": "CONDUPASTO es una institución de salud que cumple con la resolución 5228 de 2016, promoviendo la seguridad vial mediante la certificación de conductores aptos física, mental y motrizmente, a través de sus especialidades médicas.",
     "svg": "groups"
@@ -8,10 +13,5 @@
     "heading": "Objetivos",
     "content": "Brindar el servicio de certificación en el centro de reconocimiento de conductores, cumpliendo con los criterios de evaluación, monitoreando requisitos y mejorando continuamente para satisfacer a los usuarios y fortalecer la organización.",
     "svg": "verified"
-  },
-  {
-    "heading": "Políticas",
-    "content": "CRC CONDUPASTO garantiza la imparcialidad en sus evaluaciones, evitando presiones que afecten los resultados. Solo el área administrativa gestiona pagos a través del actor financiero, y el personal cuenta con cláusulas de confidencialidad para proteger la información del proceso de certificación.",
-    "svg": "books"
   }
 ]

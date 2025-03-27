@@ -1,0 +1,17 @@
+[
+  {
+    "edad": "Menor de 60 años",
+    "particular": "10",
+    "publico": "3"
+  },
+  {
+    "edad": "Entre 60 y 80 años",
+    "particular": "5",
+    "publico": "1"
+  },
+  {
+    "edad": "Mayores de 80 años",
+    "particular": "1",
+    "publico": "1"
+  }
+]

@@ -1,0 +1,43 @@
+[
+    {
+      "categoria": "A1",
+      "descripcion": "Motocicletas hasta de 125 c.c. de cilindrada.",
+      "nota": null
+    },
+    {
+      "categoria": "A2",
+      "descripcion": "Motocicletas, motociclos y mototriciclos de más de 125 c.c. de cilindrada.",
+      "nota": "La persona que tenga categoría A2 puede conducir todo tipo de motocicletas (las de A1 y A2)."
+    },
+    {
+      "categoria": "B1",
+      "descripcion": "Automóviles, camperos, camionetas y microbuses de servicio particular.",
+      "nota": null
+    },
+    {
+      "categoria": "B2",
+      "descripcion": "Camiones, rígidos, busetas y buses para el servicio particular.",
+      "nota": null
+    },
+    {
+      "categoria": "B3",
+      "descripcion": "Vehículos articulados de servicio particular.",
+      "nota": "Una persona que tenga categoría B2 puede conducir vehículos descritos en las categorías B1 y B2 y quien tiene categoría B3 puede conducir también vehículos que pertenecen a las categorías B1 y B2."
+    },
+    {
+      "categoria": "C1",
+      "descripcion": "Automóviles, camperos, camionetas y microbuses de servicio público.",
+      "nota": null
+    },
+    {
+      "categoria": "C2",
+      "descripcion": "Camiones, rígidos, busetas y buses para el servicio público.",
+      "nota": null
+    },
+    {
+      "categoria": "C3",
+      "descripcion": "Vehículos articulados para el servicio público.",
+      "nota": "Una persona que tenga C2 puede conducir los vehículos descritos en las categorías C1 y C2, y quien tiene categoría C3 puede conducir también vehículos que pertenecen a las categorías C1 y C2."
+    }
+  ]
+  

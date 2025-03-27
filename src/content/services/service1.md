@@ -1,9 +1,7 @@
 ---
-  title: "Exámenes psicotécnicos"
-  subTitle: "Evaluación de reflejos, coordinación, percepción y tiempos de reacción."
+  title: "Evaluacion motora de reflejos"
+  subTitle: ""
   benefits:
-    - "Equipos modernos para mediciones precisas."
-    - "Pruebas diseñadas para garantizar seguridad en la conducción."
-    - "Identificación temprana de dificultades psicomotoras."
+    - "Se evalúa la capacidad de coordinación entre la aceleración y el frenado."
   imageUrl: "@images/services/1.jpg"
 ---
