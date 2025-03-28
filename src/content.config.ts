@@ -1,7 +1,6 @@
-
-import { z, defineCollection } from 'astro:content';
-import { docsSchema } from '@astrojs/starlight/schema';
-import { glob } from 'astro/loaders';
+import {defineCollection, z} from 'astro:content';
+import {docsSchema} from '@astrojs/starlight/schema';
+import {glob} from 'astro/loaders';
 
 const servicesCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/services" }),

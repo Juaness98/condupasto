@@ -1,4 +1,4 @@
-import type { APIRoute } from "astro";
+import type {APIRoute} from "astro";
 import sharp from "sharp";
 import ico from "sharp-ico";
 import path from "node:path";
