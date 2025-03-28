@@ -19,11 +19,11 @@
 
 /* Light mode colors. */
 :root[data-theme="light"] {
-  --border: hsla(var(--border-yellow), 0.4);
+  --border: hsla(var(--border-green), 0.4);
   --backdrop-color: #f6f6f699;
-  --sl-color-accent: #b73d00;
-  --sl-color-accent-high: #562800;
-  --sl-color-accent-low: #ffa057;
+  --sl-color-accent: #00b712;
+  --sl-color-accent-high: #005628;
+  --sl-color-accent-low: #8cff57;
   --sl-color-black: #fff;
   --sl-color-gray-1: #272727;
   --sl-color-gray-2: #383838;
@@ -33,8 +33,8 @@
   --sl-color-gray-6: #eee;
   --sl-color-gray-7: #f6f6f6;
   --sl-color-white: #181818;
-  --list-marker-color: #fb923c;
-  --border-yellow: 54.9, 96.7%, 88%;
+  --list-marker-color: #5cfb3c;
+  --border-yellow: #1c8e33;
 }
 
 header {
