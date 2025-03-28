@@ -1,26 +1,7 @@
 /* Dark mode colors. */
 :root {
-  --border: hsla(var(--border-neutral), 0.4);
-  --backdrop-color: #272727cc;
-  --sl-color-accent: #ff801f;
-  --sl-color-accent-high: #ffa057;
-  --sl-color-accent-low: #562800;
-  --sl-color-black: #181818;
-  --sl-color-gray-1: #eee;
-  --sl-color-gray-2: #c2c2c2;
-  --sl-color-gray-3: #8b8b8b;
-  --sl-color-gray-4: #585858;
-  --sl-color-gray-5: #383838;
-  --sl-color-gray-6: #272727;
-  --sl-color-white: #fff;
-  --list-marker-color: #fb923c;
-  --border-neutral: 0, 0%, 25.1%;
-}
-
-/* Light mode colors. */
-:root[data-theme="light"] {
   --border: hsla(var(--border-green), 0.4);
-  --backdrop-color: #f6f6f699;
+  --backdrop-color: #39a11399;
   --sl-color-accent: #00b712;
   --sl-color-accent-high: #005628;
   --sl-color-accent-low: #8cff57;
@@ -34,6 +15,26 @@
   --sl-color-gray-7: #f6f6f6;
   --sl-color-white: #181818;
   --list-marker-color: #5cfb3c;
+  --border-yellow: #1c8e33;
+}
+
+/* Light mode colors. */
+:root[data-theme="light"] {
+  --border: hsla(var(--border-green), 0.4);
+  --backdrop-color: #39a11399;
+  --sl-color-accent: #00b712;
+  --sl-color-accent-high: #005628;
+  --sl-color-accent-low: #8cff57;
+  --sl-color-black: #fff;
+  --sl-color-gray-1: #272727;
+  --sl-color-gray-2: #383838;
+  --sl-color-gray-3: #585858;
+  --sl-color-gray-4: #8b8b8b;
+  --sl-color-gray-5: #c2c2c2;
+  --sl-color-gray-6: #eee;
+  --sl-color-gray-7: #f6f6f6;
+  --sl-color-white: #181818;
+  --list-marker-color: #3aa724;
   --border-yellow: #1c8e33;
 }
 
@@ -108,17 +109,17 @@ article.card {
 }
 
 .starlight-aside--tip {
-  background: linear-gradient(45deg, #ff512f, #f09819);
+  background: linear-gradient(45deg, #4bff2f, #208e57);
   border: none;
   border-radius: 0.5rem;
   color: #66350c;
 }
 
 .starlight-aside--note {
-  background: linear-gradient(45deg, #00b4db, #2193b0);
+  background: linear-gradient(45deg, #4bff2f, #208e57);
   border: none;
   border-radius: 0.5rem;
-  color: #004558;
+  color: #005804;
 }
 
 .starlight-aside__icon {
@@ -126,11 +127,11 @@ article.card {
 }
 
 .starlight-aside--tip .starlight-aside__title {
-  color: #ffe0c2;
+  color: #c2ffc7;
 }
 
 .starlight-aside--note .starlight-aside__title {
-  color: #bbf3fef7;
+  color: #c2ffc7;
 }
 
 .sl-markdown-content ul:not(:where(.not-content *)) {
